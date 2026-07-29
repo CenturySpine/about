@@ -22,7 +22,9 @@ import {
   KofiIcon,
   LinkedinIcon,
   MailIcon,
+  StravaIcon,
 } from "@/components/icons";
+import { KofiButton } from "@/components/KofiButton";
 
 const networkIcons: Record<NetworkKey, (props: { size?: number }) => React.ReactNode> = {
   facebook: FacebookIcon,
@@ -31,11 +33,15 @@ const networkIcons: Record<NetworkKey, (props: { size?: number }) => React.React
   github: GithubIcon,
   kofi: KofiIcon,
   blog: FeatherIcon,
+  strava: StravaIcon,
 };
 
-const otherLocale: Record<Locale, { locale: Locale; href: string; label: string }> = {
-  fr: { locale: "en", href: "/en", label: "English version" },
-  en: { locale: "fr", href: "/", label: "Version française" },
+const otherLocale: Record<
+  Locale,
+  { locale: Locale; href: string; label: string; short: string }
+> = {
+  fr: { locale: "en", href: "/en", label: "English version", short: "en" },
+  en: { locale: "fr", href: "/", label: "Version française", short: "fr" },
 };
 
 export function AboutView({ locale }: { locale: Locale }) {
@@ -53,35 +59,21 @@ export function AboutView({ locale }: { locale: Locale }) {
   const other = otherLocale[locale];
 
   return (
-    <div className="mx-auto max-w-xl px-4 py-10">
-      <div className="mb-6 flex justify-end text-sm font-semibold">
-        <Link href={other.href} className="text-[var(--text-tertiary)]">
-          {other.label}
+    <div className="mx-auto max-w-xl px-4 py-4">
+      <div className="relative rounded-[var(--radius-lg)] border border-[var(--border-default)] bg-[var(--bg-surface)] p-6 shadow-[var(--shadow-md)]">
+        <Link
+          href={other.href}
+          aria-label={other.label}
+          title={other.label}
+          className="absolute top-3 right-3 text-xs font-bold tracking-wide text-[var(--text-tertiary)] !no-underline"
+        >
+          {other.short}
         </Link>
-      </div>
 
-      <div className="rounded-[var(--radius-lg)] border border-[var(--border-default)] bg-[var(--bg-surface)] p-6 shadow-[var(--shadow-md)]">
         <h1 className="text-center text-xl font-bold">
           {data.fullName}
           {age !== null ? `, ${age}${data.ageSuffix}` : ""}
         </h1>
-
-        <div className="mt-3 flex justify-center">
-          <a
-            href="https://ko-fi.com/G2G31YCXGK"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block"
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://storage.ko-fi.com/cdn/kofi6.png?v=6"
-              alt="Buy Me a Coffee at ko-fi.com"
-              height={36}
-              className="h-9 w-auto"
-            />
-          </a>
-        </div>
 
         <div className="mt-4 flex justify-center">
           <div className="w-full max-w-sm">
@@ -147,7 +139,7 @@ export function AboutView({ locale }: { locale: Locale }) {
 
         <p className="mt-6 leading-relaxed">{data.introText}</p>
 
-        <Section title={data.projectsTitle}>
+        <Section title={data.projectsTitle} headerRight={<KofiButton />}>
           <Panel>
             <ul className="flex flex-col gap-3">
               {data.projects.map((project) => (
@@ -289,12 +281,21 @@ export function AboutView({ locale }: { locale: Locale }) {
   );
 }
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+function Section({
+  title,
+  headerRight,
+  children,
+}: {
+  title: string;
+  headerRight?: React.ReactNode;
+  children: React.ReactNode;
+}) {
   return (
-    <div className="mt-6">
+    <div className="relative mt-6">
       <h2 className="mb-2 text-sm font-bold tracking-[0.02em] uppercase text-[var(--text-secondary)]">
         {title}
       </h2>
+      {headerRight && <div className="absolute top-2.5 right-[21px]">{headerRight}</div>}
       {children}
     </div>
   );

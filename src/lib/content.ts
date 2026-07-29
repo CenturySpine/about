@@ -196,7 +196,14 @@ export const content: Record<Locale, AboutContent> = {
   },
 };
 
-export type NetworkKey = "facebook" | "instagram" | "linkedin" | "github" | "kofi" | "blog";
+export type NetworkKey =
+  | "facebook"
+  | "instagram"
+  | "linkedin"
+  | "github"
+  | "kofi"
+  | "blog"
+  | "strava";
 
 export const networks: { key: NetworkKey; label: string; url: string }[] = [
   { key: "facebook", label: "Facebook", url: "https://www.facebook.com/bruno.chappe" },
@@ -205,6 +212,7 @@ export const networks: { key: NetworkKey; label: string; url: string }[] = [
   { key: "github", label: "GitHub", url: "https://github.com/CenturySpine" },
   { key: "kofi", label: "Ko-fi", url: "https://ko-fi.com/brunochappe" },
   { key: "blog", label: "Blog", url: "https://centuryspine.wordpress.com/" },
+  { key: "strava", label: "Strava", url: "https://www.strava.com/athletes/34974876" },
 ];
 
 export const contactEmail = "bruno.chappe@gmail.com";

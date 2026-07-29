@@ -79,6 +79,14 @@ export function FeatherIcon(props: { size?: number }) {
   );
 }
 
+export function StravaIcon({ size = 20 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 384 512" fill="currentColor" aria-hidden="true">
+      <path d="M158.4 0L7 292 96.2 292 158.4 175.9 220.1 292 308.6 292 158.4 0zM308.6 292l-43.9 88.2-44.6-88.2-67.6 0 112.2 220 111.5-220-67.6 0z" />
+    </svg>
+  );
+}
+
 export function MailIcon(props: { size?: number }) {
   return (
     <IconBase {...props}>
