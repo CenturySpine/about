@@ -22,6 +22,8 @@ const keywords = [
   "CenturySpine",
   "Ridgegear",
   "Planerz",
+  "NUNI",
+  "Street golf",
   // Activités — FR
   "Rando",
   "Randonnée",

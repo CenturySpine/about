@@ -20,7 +20,7 @@ export function calculateAge(birthDate: Date, on: Date = new Date()): number {
   return age;
 }
 
-export type ProjectKey = "ridgegear" | "planerz";
+export type ProjectKey = "ridgegear" | "planerz" | "nuni";
 
 export interface ProjectCollaborator {
   text: string;
@@ -38,11 +38,13 @@ export interface ProjectEntry {
 export const projectIcons: Record<ProjectKey, string> = {
   ridgegear: "/icons/ridgegear.png",
   planerz: "/icons/planerz.png",
+  nuni: "/icons/nuni.png",
 };
 
 export const projectUrls: Record<ProjectKey, string> = {
   ridgegear: "https://ridgegear.centuryspine.org",
   planerz: "https://planerz.centuryspine.org",
+  nuni: "https://nuni.centuryspine.org",
 };
 
 export interface AboutContent {
@@ -119,6 +121,11 @@ export const content: Record<Locale, AboutContent> = {
           url: "https://www.instagram.com/florentfr/",
         },
       },
+      {
+        key: "nuni",
+        name: "NUNI",
+        description: "Scoring collaboratif de sessions de street golf entre amis",
+      },
     ],
     passionsTitle: "Passions et occupations",
     passions: [
@@ -167,6 +174,11 @@ export const content: Record<Locale, AboutContent> = {
           name: "Florent P.",
           url: "https://www.instagram.com/florentfr/",
         },
+      },
+      {
+        key: "nuni",
+        name: "NUNI",
+        description: "Collaborative scoring for street golf sessions with friends",
       },
     ],
     passionsTitle: "Passions and activities",
