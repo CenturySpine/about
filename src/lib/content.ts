@@ -124,7 +124,7 @@ export const content: Record<Locale, AboutContent> = {
       {
         key: "nuni",
         name: "NUNI",
-        description: "Scoring collaboratif de sessions de street golf entre amis",
+        description: "Scoring collaboratif de sessions de street golf",
       },
     ],
     passionsTitle: "Passions et occupations",
@@ -178,7 +178,7 @@ export const content: Record<Locale, AboutContent> = {
       {
         key: "nuni",
         name: "NUNI",
-        description: "Collaborative scoring for street golf sessions with friends",
+        description: "Collaborative scoring for street golf sessions",
       },
     ],
     passionsTitle: "Passions and activities",
