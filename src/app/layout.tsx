@@ -24,6 +24,8 @@ const keywords = [
   "Planerz",
   "NUNI",
   "Street golf",
+  "Simmo",
+  "Prêt immobilier",
   // Activités — FR
   "Rando",
   "Randonnée",
