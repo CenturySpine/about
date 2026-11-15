@@ -235,7 +235,7 @@ export const networks: { key: NetworkKey; label: string; url: string }[] = [
   { key: "linkedin", label: "LinkedIn", url: "https://www.linkedin.com/in/bruno-chappe-669a5869" },
   { key: "github", label: "GitHub", url: "https://github.com/CenturySpine" },
   { key: "kofi", label: "Ko-fi", url: "https://ko-fi.com/brunochappe" },
-  { key: "blog", label: "Blog", url: "https://centuryspine.wordpress.com/" },
+  { key: "blog", label: "Blog", url: "https://blog.centuryspine.org/" },
   { key: "strava", label: "Strava", url: "https://www.strava.com/athletes/34974876" },
 ];
 
